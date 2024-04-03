@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #44a3ff;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: black; /* Blue color */
+}
+
+.navbar-nav .nav-item {
+    padding: 0 10px;
+    color: black;
+}
+
+.movie-list {
+    padding: 20px;
+}
+
+.movie-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.text{
+    text-align: center;
+}
+.sign-up-container{
+    background-color: #d3e9fe;
+    padding: 10px;
+    border-radius: 10px;
+}

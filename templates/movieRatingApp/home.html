@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block main_body_block %}
+
+    <div class="container">
+        <div class="movie-list">
+            <h2>All Movies</h2>
+            <hr>
+            <form class="d-flex my-4 " role="search" method="GET" action="{% url 'movieRatingApp:search-movie' %}">
+                <input class="form-control me-2 col-5 " name="movie_search" type="search" placeholder="Search movies.." aria-label="Search">
+                <button class="btn btn-outline-info mx-3" type="submit">Search</button>
+            </form>
+            <div class="row">
+                {% for movie in movies %}
+                    <div class="col-md-6">
+                        <div class="movie-card">
+                            <h3><a href="{% url 'movieRatingApp:detail-movie' movie.pk %}"
+                                   style="text-decoration: none;color: black"> {{ movie.name }}</a></h3>
+                            <p>Genre: {{ movie.genre }}</p>
+                            <p>Rating: {{ movie.rating }}</p>
+                            {% if movie.get_rating_bool %}
+                                <p>you rated the movie</p>
+                            {% else %}
+                                <a href="{% url 'movieRatingApp:rate-movie' movie.pk %}">Rate this movie.</a>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

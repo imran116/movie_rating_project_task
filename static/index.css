@@ -1,0 +1,41 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .jumbotron {
+      background-color: #007bff;
+      color: #fff;
+      padding: 50px;
+    }
+    .movie-card {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .rating {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .rating input[type="radio"] {
+      display: none;
+    }
+    .rating label {
+      font-size: 30px;
+      color: #ffc107; /* Yellow color for selected stars */
+      cursor: pointer;
+    }
+    .rating label:before {
+      content: '\2605'; /* Unicode for star character */
+    }
+    .rating input[type="radio"]:checked ~ label {
+      color: #ffc107; /* Yellow color for selected stars */
+    }

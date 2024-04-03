@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block main_body_block %}
+
+    <div class="container">
+        <div class="movie-list">
+            <h2>Movie Details</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="movie-card">
+                        <h3>Movie Name:{{ movie.name }}</h3>
+                        <p>Movie Genre: {{ movie.genre }}</p>
+                        <p>Content Rating: {{ movie.rating }}</p>
+                        <p>Release Date: {{ movie.release_date }}</p>
+                        <p>Average Rating: {{ movie.average_rating|floatformat:1 }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

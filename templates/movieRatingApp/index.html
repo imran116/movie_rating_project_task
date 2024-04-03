@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Rating System</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+<header>
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to our Movie Rating System</h1>
+        <p class="lead">Rate your favorite movies and discover new ones!</p>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <a href="{% url 'loginApp:login' %}" class="btn btn-success btn-block">Login</a>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'loginApp:sing_up' %}" class="btn btn-success btn-block">Signup</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h2>Rate Your Favourite Movies</h2>
+        <hr>
+        <div class="row">
+            {% for movie in movies %}
+
+                <div class="col-md-6">
+                    <div class="movie-card">
+                        <a href="{% url 'movieRatingApp:detail-movie' movie.pk %}"
+                           style="text-decoration: none;color: black">
+                            <h4> {{ movie.name }}</h4>
+                            <p>Genre: {{ movie.genre }}</p>
+                            <p>Rating: {{ movie.rating }}</p>
+                        </a>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+<!-- Bootstrap JS (optional, for some components) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
