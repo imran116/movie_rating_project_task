@@ -2,9 +2,10 @@
 
 a. Language and Database Used:
 
-Language: HTML, CSS, Python
-Framework: Django, Django Rest Framework
+Languages: HTML, CSS, Python
+Framework: Django (backend), Django Rest Framework (API development)
 Database: MySQL
+Frontend Framework: Bootstrap
 
 b. Setup Instructions:
 
@@ -12,6 +13,10 @@ Clone the repository from GitHub Repository Link: https://github.com/imran116/mo
 Ensure that Python is installed in the system. If not then download from Python Official Website.
 Install Django and Django Rest Framework using pip:
 pip install django djangorestframework
+
+Install the MySQL database server on the local machine, if not installed then download and install MySQL from the official MySQL website.
+Install the MySQL Python package:
+pip install mysqlclient
 
 Navigate to the project directory in your terminal.
 Run the following command to apply migrations and start the server:
